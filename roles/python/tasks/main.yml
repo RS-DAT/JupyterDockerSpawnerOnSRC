@@ -1,0 +1,7 @@
+---
+- name: Install JupyterHub
+  pip: name=jupyterhub
+- name: Install DockerSpawner
+  pip: name=dockerspawner
+- name: Install jupyter_client
+  pip: name=jupyter_client
