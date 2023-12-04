@@ -5,3 +5,5 @@
   pip: name=dockerspawner
 - name: Install jupyter_client
   pip: name=jupyter_client
+- name: Install jupyterhub-idle-culler
+  pip: name=jupyterhub-idle-culler
