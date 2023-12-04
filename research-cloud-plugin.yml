@@ -59,4 +59,3 @@
     - name: Set up Jupyter server
       include_role:
         name: jupyter
-      when: inventory_hostname == "jumphost"
