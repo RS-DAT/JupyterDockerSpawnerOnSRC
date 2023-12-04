@@ -23,7 +23,6 @@ c.JupyterHub.services = [
 
 c.JupyterHub.bind_url = 'https://127.0.0.1:8000'
 c.Spawner.default_url = '/lab?reset'
-c.Spawner.environment = {}
 c.JupyterHub.port = 8000
 
 # Delete any users from the database that do not pass validation
@@ -40,24 +39,20 @@ c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
 
 # replace with your desired image see https://github.com/jupyter/docker-stacks/tree/main/images
 # and see https://quay.io/organization/pangeo
-c.DockerSpawner.image = 'quay.io/pangeo/base-notebook:latest'
+c.DockerSpawner.image = 'pangeo/pangeo-notebook:latest'
 
 # set c.Spawner.cmd to launch singleuser server with jupyterlab
 # this is needed if pangeo image is used
 c.Spawner.cmd = ['jupyter-labhub']
 
-# Explicitly set notebook directory because we'll be mounting a volume to it.
-# Most `jupyter/docker-stacks` *-notebook images run the Notebook server as
-# user `jovyan`, and set the notebook directory to `/home/jovyan/work`.
-# We follow the same convention
-c.DockerSpawner.notebook_dir = '/home/jovyan/work'
-
 # Mount the real user's Docker volume on the host to the notebook user's
 # notebook directory in the container
 # On SRC, the scratch directory should be mounted and not /home directory
 # default mode is  "mode": "rw"
-notebook_mount_dir = '~/scratch'
-c.DockerSpawner.volumes = {notebook_mount_dir: {"bind": c.DockerSpawner.notebook_dir}}
+c.DockerSpawner.volumes = {
+    '/scratch': {"bind": '/home/jovyan/scratch'},
+    '/data': {"bind": '/home/jovyan/data'}
+}
 
 # delete containers when servers are stopped. This will destroy any data in the
 # container not stored in mounted volumes. Default is False, that means when the
