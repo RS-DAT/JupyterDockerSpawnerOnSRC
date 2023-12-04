@@ -1,4 +1,4 @@
-- name: Enable ansible to configure workers
+- name: Install and configure Jupyter DockerSpawner
   hosts: localhost
   gather_facts: false
   vars: {}
@@ -7,40 +7,6 @@
     - name: Wait for system to become reachable
       wait_for_connection:
         timeout: 300
-
-    - name: Create group workers with workers' IPs
-      add_host:
-        name: "{{ item }}"
-        groups: workers
-        ansible_user: ubuntu
-        ansible_connection: ssh
-        ansible_ssh_private_key_file: ~/.ssh/id_rsa
-        ansible_become: yes
-      loop: '{{ worker_ip_addresses }}'
-
-    - name: Alias name for jumphost
-      add_host:
-        name: jumphost
-        hostname: localhost
-
-    - name: Scan for worker keys.
-      shell:
-        cmd: ssh-keyscan {{ item }}
-      register: ssh_scan
-      loop: '{{ worker_ip_addresses }}'
-
-    - name: Write the worker keys to known hosts
-      known_hosts:
-        name: "{{ item.0.item }}"
-        key: "{{ item.1 }}"
-      with_subelements:
-        - "{{ ssh_scan.results }}"
-        - stdout_lines
-
-- name: Install and configure Jupyter DockerSpawner
-  hosts: all
-  vars: {}
-  tasks:
 
     - name: Common stuff
       include_role:
@@ -60,9 +26,26 @@
           - acl
           - net-tools
           - jq
+          - ca-certificates
+          - curl
+          - software-properties-common
+          - apt-transport-https
           - npm
           - nodejs
           - python3-pip
+
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+
+    - name: Update apt and install docker-ce
+      apt: update_cache=yes name=docker-ce state=latest
 
     - name: Install configurable http proxy
       npm:
