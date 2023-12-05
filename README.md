@@ -60,4 +60,4 @@ to delete images/containers.
 
 ## Credits
 
-Most of the playbooks in this repository have been taken, inspired or adapted from the ones in the [RS-DAT JupyterDaskOnSRC](https://github.com/RS-DAT/JupyterDaskOnSRC).
+Most of the playbooks in this repository have been taken, inspired or adapted from the ones in the [RS-DAT JupyterDaskOnSRC](https://github.com/RS-DAT/JupyterDaskOnSRC) and in the [eWaterCycle infra](https://github.com/eWaterCycle/infra).
