@@ -11,16 +11,6 @@ Any pre-requisites that may not be covered by Ansible itself or the role should 
 Role Variables
 --------------
 
-```yaml
-# Location where conda installer is downloaded to
-conda_installer_root: /opt
-# Location where conda will be installed
-conda_root: /opt/conda
-# Name of conda environment to use
-conda_environment: jupyterdask
-# URL to user-defined environment file (default value: default)
-environment_url: default
-```
 
 Dependencies
 ------------
