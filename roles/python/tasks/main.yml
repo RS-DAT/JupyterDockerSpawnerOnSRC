@@ -1,9 +1,8 @@
 ---
-- name: Install JupyterHub
-  pip: name=jupyterhub
-- name: Install DockerSpawner
-  pip: name=dockerspawner
-- name: Install jupyter_client
-  pip: name=jupyter_client
-- name: Install jupyterhub-idle-culler
-  pip: name=jupyterhub-idle-culler
+- name: Install JupyterHub and DockerSpawner
+  pip:
+    name:
+      - jupyterhub
+      - dockerspawner
+      - jupyter_client
+      - jupyterhub-idle-culler
