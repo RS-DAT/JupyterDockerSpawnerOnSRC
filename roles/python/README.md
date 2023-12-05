@@ -1,7 +1,7 @@
 Conda 
 =====
 
-[Conda](https://docs.conda.io) role for the JupyterDask deployment on SURF Research Cloud. Adapted from the [eWaterCycle lab infrastructure](https://github.com/eWaterCycle/infra).
+Python role for JupyterHub with DockerSpawner on [SURF Research Cloud (SRC)](https://servicedesk.surf.nl/wiki/display/WIKI/SURF+Research+Cloud).
 
 Requirements
 ------------
