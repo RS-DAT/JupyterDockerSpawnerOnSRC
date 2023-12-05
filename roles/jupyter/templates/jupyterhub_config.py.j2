@@ -50,8 +50,8 @@ c.Spawner.cmd = ['jupyter-labhub']
 # On SRC, the scratch directory should be mounted and not /home directory
 # default mode is  "mode": "rw"
 c.DockerSpawner.volumes = {
-    '/scratch': {"bind": '/home/jovyan/scratch'},
-    '/data': {"bind": '/home/jovyan/data'}
+    "/scratch": {"bind": "/home/jovyan/scratch"},
+    "/data": {"bind": "/home/jovyan/data"}
 }
 
 # delete containers when servers are stopped. This will destroy any data in the
