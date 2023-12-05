@@ -1,7 +1,7 @@
 Jupyter
 =======
 
-[JupyterHub](https://jupyter.org/hub) role for the JupyterDask deployment on SURF Research Cloud. Adapted from the [eWaterCycle lab infrastructure](https://github.com/eWaterCycle/infra).
+[JupyterHub](https://jupyter.org/hub) role for SURF Research Cloud. Adapted from the [eWaterCycle lab infrastructure](https://github.com/eWaterCycle/infra).
 
 Requirements
 ------------
