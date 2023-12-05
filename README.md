@@ -31,7 +31,7 @@ Follow the [SRC Create a catalog item](https://servicedesk.surf.nl/wiki/display/
 - SRC-CO
 - SRC-Ngnix
 - SRC-External plugin
-- `the JupyterDockerSpawnerOnSRC component `This is created in the previous step
+- the JupyterDockerSpawnerOnSRC component created in the previous step
 
 Note: When choosing the `Operating system` in the step `Cloud provider`, choose
 Ubuntu 20, because the latest version of Ubuntu does not support `iRODS` that is
