@@ -50,7 +50,7 @@ The volumes `/data` and `/scratch` are mounted within the user home directory (`
 inside the container. If the user does not stop the server, the container
 continues running until a default timeout is reached (see Jupyter parameters [here](`./roles/jupyter/defaults/main.yml`)). Otherwise, the container will be stopped (Status Exited).
 Next time the user login, the same container will be used. So, the data and packages are preserved across sessions.
-preserved. Note that, the container and images will be stayed on the workspace.
+Note that, the container and images will stay on the workspace.
 Only when the Jupyter service is stopped, the containers will be removed.
 
 ### Remove images or containers
