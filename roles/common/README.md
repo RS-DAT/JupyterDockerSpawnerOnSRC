@@ -2,8 +2,7 @@ Common
 ======
 
 Common tasks for the Jupyter Docker Spawner deployment on SURF Research Cloud.
-Adapted from the [Jupyter Dask on
-SRC](https://github.com/RS-DAT/JupyterDaskOnSRC).
+Adapted from the [eWaterCycle lab infrastructure](https://github.com/eWaterCycle/infra).
 
 Requirements
 ------------
