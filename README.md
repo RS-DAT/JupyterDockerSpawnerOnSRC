@@ -46,7 +46,7 @@ Follow the [SRC Start a simple workspace](https://servicedesk.surf.nl/wiki/displ
 The docker image can be set in the [jupyterhub config
 file](./roles/jupyter/templates/jupyterhub_config.py.j2). After logging to
 Jupyter server, the docker image is pulled and a container starts running.
-Meantime, the volumes `/data` and `/scratch` are mounted to the same folders
+The volumes `/data` and `/scratch` are mounted within the user home directory (`~/data` and `~/scratch`)
 inside the container. If the user does not stop the server, the container
 continues running. Otherwise, the container will be stopped (Status Exited).
 Next time, the same container will be used. So, the data and packages are
