@@ -41,7 +41,22 @@ needed for `SRC-CO` component.
 
 Follow the [SRC Start a simple workspace](https://servicedesk.surf.nl/wiki/display/WIKI/Start+a+simple+workspace) and choose the item that is created in the previous step.
 
+## Docker images and containers
 
+The docker image can be set in the [jupyterhub config
+file](./roles/jupyter/templates/jupyterhub_config.py.j2). After logging to
+Jupyter server, the docker image is pulled and a container starts running.
+Meantime, the volumes `/data` and `/scratch` are mounted to the same folders
+inside the container. If the user does not stop the server, the container
+continues running. Otherwise, the container will be stopped (Status Exited).
+Next time, the same container will be used. So, the data and packages are
+preserved. Note that, the container and images will be stayed on the workspace.
+Only when the Jupyter service is stopped, the containers will be removed.
+
+### Remove images or containers
+
+You can log in to the workspace using `ssh` and use docker command with `sudo`
+to delete images/containers.
 
 ## Credits
 
