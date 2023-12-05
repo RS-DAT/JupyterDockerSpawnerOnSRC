@@ -1,6 +1,6 @@
 galaxy_info:
-  author: Stefan Verhoeven and Francesco Nattino
-  description: JupyterDask SRC jupyter tasks
+  author: Sarah Alidoost and Francesco Nattino
+  description: Jupyterhub DockerSpawner on SRC
   company: Netherlands eScience Center
   license: Apache-2.0
   min_ansible_version: 2.4

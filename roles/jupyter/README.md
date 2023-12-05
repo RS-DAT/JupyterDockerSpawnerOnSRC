@@ -17,23 +17,12 @@ cull:
   timeout: '86400' # 1 day
   # The maximum age (in seconds) of servers that should be culled even if they are active.
   max_age: '604800' # 7 days
-jupyterhub_spawner_environment:
-  # Filesystem Spec configuration directory
-  FSSPEC_CONFIG_DIR: /etc/fsspec
-# Location where conda is installed
-conda_root: /opt/conda
-# Name of conda environment to use
-conda_environment: jupyterdask
-# Path to conda environments bin directory
-conda_environment_bin: '{{ conda_root }}/envs/{{ conda_environment }}/bin'
-# List of posix users who should have JupyterHub admin rights
-jupyterhub_admins: []
 ```
 
 Dependencies
 ------------
 
-The Jupyter Hub requires a conda environment which can be installed using the [conda role](../conda).
+The Jupyter Hub requires python packages which can be installed using `pip`, see the [python role](../python).
 
 Example Playbook
 ----------------
