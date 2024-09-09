@@ -18,9 +18,9 @@ source as `https://github.com/RS-DAT/JupyterDockerSpawnerOnSRC.git`.
 
 See each item below for more technical information about the component:
 
-- [research-cloud-plugin.yml](./research-cloud-plugin.yml) for a list of
+- [research-cloud-plugin.yml](https://github.com/RS-DAT/JupyterDockerSpawnerOnSRC/blob/main/research-cloud-plugin.yml) for a list of
   packages that are installed.
-- [jupyterhub_config.py.j2](./roles/jupyter/templates/research-cloud-plugin.yml)
+- [jupyterhub_config.py.j2](https://github.com/RS-DAT/JupyterDockerSpawnerOnSRC/blob/main/roles/jupyter/templates/jupyterhub_config.py.j2)
   for a list of configs for jupyterhub and docker spawner.
 
 ## Create a catalog item
@@ -44,7 +44,7 @@ Follow the [SRC Start a simple workspace](https://servicedesk.surf.nl/wiki/displ
 ## Docker images and containers
 
 The docker image can be set in the [jupyterhub config
-file](./roles/jupyter/templates/jupyterhub_config.py.j2). After logging to
+file]([./roles/jupyter/templates/jupyterhub_config.py.j2](https://github.com/RS-DAT/JupyterDockerSpawnerOnSRC/blob/main/roles/jupyter/templates/jupyterhub_config.py.j2)). After logging to
 Jupyter server, the docker image is pulled and a container starts running.
 The volumes `/data` and `/scratch` are mounted within the user home directory (`~/data` and `~/scratch`)
 inside the container. If the user does not stop the server, the container
